@@ -26,6 +26,11 @@ public class Task {
                 + Dawae.taskList.size() + " tasks in the list.";
     }
     
+    public String deleteTaskMsg() {
+        return "Noted. I've removed this task:\n " + toString() + "\nNow you have "
+                + Dawae.taskList.size() + " tasks in the list.";
+    }
+    
     @Override
     public String toString() {
         return getStatusIcon() + this.description;

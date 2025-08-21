@@ -35,7 +35,9 @@ public class Dawae {
                     } else if (splitted[0].equals("unmark")) {
                         System.out.println(taskList.get(Integer.parseInt(splitted[1]) - 1).unmarkDone());
                     } else if (splitted[0].equals("delete")) {
-                        System.out.println(taskList.remove(Integer.parseInt(splitted[1]) - 1));
+                        Task task = taskList.get(Integer.parseInt(splitted[1]) - 1);
+                        taskList.remove(task);
+                        System.out.println(task.deleteTaskMsg());
                     }else { // need to see which kind to create
                         Task task;
                         if (splitted[0].equals("Todo")) {
