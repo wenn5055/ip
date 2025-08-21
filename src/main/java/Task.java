@@ -8,20 +8,16 @@ public class Task {
     }
     
     public String getStatusIcon() {
-        return (isDone ? "[X]" : "[ ]"); // mark done task with X
+        return (isDone ? "[X] " : "[ ] "); // mark done task with X
     }
     
     public String markDone() {
         this.isDone = true;
-        return """
-               Nice! I've marked this task as done:
-               [X] """ + this.description;
+        return "Nice! I've marked this task as done:\n [X] " + this.description;
     }
     
     public String unmarkDone() {
         this.isDone = false;
-        return """
-               OK, I've marked this task as not done yet:
-               [ ] """ + this.description;
+        return "OK, I've marked this task as not done yet:\n [ ] " + this.description;
     }
 }
