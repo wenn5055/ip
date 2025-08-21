@@ -20,4 +20,14 @@ public class Task {
         this.isDone = false;
         return "OK, I've marked this task as not done yet:\n [ ] " + this.description;
     }
+    
+    public String addTaskMsg() {
+        return "Got it. I've added this task:\n " + toString() + "\nNow you have "
+                + Dawae.i + " tasks in the list.";
+    }
+    
+    @Override
+    public String toString() {
+        return getStatusIcon() + this.description;
+    }
 }
