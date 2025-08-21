@@ -23,7 +23,7 @@ public class Task {
     
     public String addTaskMsg() {
         return "Got it. I've added this task:\n " + toString() + "\nNow you have "
-                + Dawae.i + " tasks in the list.";
+                + Dawae.taskList.size() + " tasks in the list.";
     }
     
     @Override

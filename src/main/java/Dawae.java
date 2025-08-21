@@ -1,7 +1,7 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Dawae {
-    private static Task[] storage = new Task[100];
-    public static int i = 0;
+    public static ArrayList<Task> taskList = new ArrayList<>();
     private static final String line = "____________________________________________________________";
     
     public static void main(String[] args) {
@@ -26,15 +26,17 @@ public class Dawae {
                 if (!inputt.equals("bye")) {
                     if (inputt.equals("list")) {
                         System.out.println("Here are the tasks in your list! :]");
-                        for (int j = 1; j <= i; j++) {
-                            Task task = storage[j - 1];
+                        for (int j = 1; j <= taskList.size(); j++) {
+                            Task task = taskList.get(j - 1);
                             System.out.println(j + ". " + task.toString());
                         }
                     } else if (splitted[0].equals("mark")) {
-                        System.out.println(storage[Integer.parseInt(splitted[1]) - 1].markDone());
+                        System.out.println(taskList.get(Integer.parseInt(splitted[1]) - 1).markDone());
                     } else if (splitted[0].equals("unmark")) {
-                        System.out.println(storage[Integer.parseInt(splitted[1]) - 1].unmarkDone());
-                    } else { // need to see which kind to create
+                        System.out.println(taskList.get(Integer.parseInt(splitted[1]) - 1).unmarkDone());
+                    } else if (splitted[0].equals("delete")) {
+                        System.out.println(taskList.remove(Integer.parseInt(splitted[1]) - 1));
+                    }else { // need to see which kind to create
                         Task task;
                         if (splitted[0].equals("Todo")) {
                             desc = inputt.substring(4).trim();
@@ -58,7 +60,7 @@ public class Dawae {
                             throw new DawaeExceptions("I dont understand u. >:[");
                         }
                         if (desc.length() == 0) throw new DawaeMissingArgumentException("Brah, give me ur task description...\uD83D\uDE44");
-                        storage[i++] = task;
+                        taskList.add(task);
                         System.out.println(task.addTaskMsg());
                     }
                     System.out.println(line);
