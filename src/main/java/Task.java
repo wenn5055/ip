@@ -1,4 +1,4 @@
-public class Task {
+public abstract class Task {
     protected String description;
     protected boolean isDone;
     
@@ -30,6 +30,8 @@ public class Task {
         return "Noted. I've removed this task:\n " + toString() + "\nNow you have "
                 + Dawae.taskList.size() + " tasks in the list.";
     }
+    
+    public abstract String toDataFile();
     
     @Override
     public String toString() {
