@@ -35,13 +35,13 @@ public class Dawae {
                 task = new Todo(desc);
                 break;
             case 'D':
-                String by = splitted[3];
-                task = new Deadline(desc, by);
+                String byString = splitted[3];
+                task = new Deadline(desc, byString);
                 break;
             case 'E':
-                String from = splitted[3];
-                String to = splitted[4];
-                task = new Event(desc, from, to);
+                String fromString = splitted[3];
+                String toString = splitted[4];
+                task = new Event(desc, fromString, toString);
                 break;
         }
         if (done) task.markDone();
@@ -180,17 +180,17 @@ public class Dawae {
                             int byPos = inputt.indexOf("/by ");
                             if (byPos == -1) throw new DawaeMissingArgumentException("give deadline pls brah");
                             desc = inputt.substring(8, byPos).trim();
-                            String by = inputt.substring(byPos + 4).trim();
-                            task = new Deadline(desc, by);
+                            String byString = inputt.substring(byPos + 4).trim();
+                            task = new Deadline(desc, byString);
                         } else if (splitted[0].equals("Event")) {
                             int fromPos = inputt.indexOf("/from ");
                             int toPos = inputt.indexOf("/to ");
                             if (fromPos == -1) throw new DawaeMissingArgumentException("give start pls brah");
                             if (toPos == -1) throw new DawaeMissingArgumentException("give end pls brah");
                             desc = inputt.substring(5, fromPos).trim();
-                            String from = inputt.substring(fromPos + 6, toPos).trim();
-                            String to = inputt.substring(toPos + 4).trim();
-                            task = new Event(desc, from, to);
+                            String fromString = inputt.substring(fromPos + 6, toPos).trim();
+                            String toString = inputt.substring(toPos + 4).trim();
+                            task = new Event(desc, fromString, toString);
                         } else {
                             throw new DawaeExceptions("I dont understand u. >:[");
                         }
