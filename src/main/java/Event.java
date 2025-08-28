@@ -1,11 +1,19 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
 public class Event extends Task{
-    protected String from;
-    protected String to;
+    protected String fromString;
+    protected String toString;
+    protected LocalDateTime from;
+    protected LocalDateTime to;
     
-    public Event(String description, String from, String to) {
+    public Event(String description, String fromString, String toString) {
         super(description);
-        this.from = from;
-        this.to = to;
+        this.fromString = fromString;
+        this.toString = toString;
+        this.from = LocalDateTime.parse(fromString);
+        this.to = LocalDateTime.parse(toString);
     }
     
     @Override
@@ -16,6 +24,8 @@ public class Event extends Task{
     
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (from: " + this.from + " to: " + this.to + ")";
+        return "[E]" + super.toString() + " (from: "
+                + this.from.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)) + " to: "
+                + this.to.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)) + ")";
     }
 }

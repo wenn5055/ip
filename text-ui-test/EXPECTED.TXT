@@ -9,19 +9,19 @@ Now you have 1 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
- [D][ ] eat lunch (by: noon)
+ [D][ ] essay (by: 31 Aug 2025, 6:30:00 am)
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
- [E][ ] career fair (from: 12pm to: 5pm)
+ [E][ ] career fair (from: 20 Aug 2025, 6:30:00 am to: 20 Aug 2025, 8:30:00 am)
 Now you have 3 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list! :]
 1. [T][ ] wakeup
-2. [D][ ] eat lunch (by: noon)
-3. [E][ ] career fair (from: 12pm to: 5pm)
+2. [D][ ] essay (by: 31 Aug 2025, 6:30:00 am)
+3. [E][ ] career fair (from: 20 Aug 2025, 6:30:00 am to: 20 Aug 2025, 8:30:00 am)
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
@@ -30,16 +30,16 @@ Now you have 4 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this task:
- [E][ ] Sectionals (from: 7pm to: 9pm)
+ [E][ ] Sectionals (from: 20 Feb 2025, 8:30:00 am to: 20 Feb 2025, 10:30:00 am)
 Now you have 5 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list! :]
 1. [T][ ] wakeup
-2. [D][ ] eat lunch (by: noon)
-3. [E][ ] career fair (from: 12pm to: 5pm)
+2. [D][ ] essay (by: 31 Aug 2025, 6:30:00 am)
+3. [E][ ] career fair (from: 20 Aug 2025, 6:30:00 am to: 20 Aug 2025, 8:30:00 am)
 4. [T][ ] Dinner w section
-5. [E][ ] Sectionals (from: 7pm to: 9pm)
+5. [E][ ] Sectionals (from: 20 Feb 2025, 8:30:00 am to: 20 Feb 2025, 10:30:00 am)
 ____________________________________________________________
 ____________________________________________________________
 Nice! I've marked this task as done:
@@ -47,7 +47,7 @@ Nice! I've marked this task as done:
 ____________________________________________________________
 ____________________________________________________________
 Nice! I've marked this task as done:
- [X] eat lunch
+ [X] essay
 ____________________________________________________________
 ____________________________________________________________
 Nice! I've marked this task as done:
@@ -64,14 +64,14 @@ ____________________________________________________________
 ____________________________________________________________
 Here are the tasks in your list! :]
 1. [T][X] wakeup
-2. [D][X] eat lunch (by: noon)
-3. [E][ ] career fair (from: 12pm to: 5pm)
+2. [D][X] essay (by: 31 Aug 2025, 6:30:00 am)
+3. [E][ ] career fair (from: 20 Aug 2025, 6:30:00 am to: 20 Aug 2025, 8:30:00 am)
 4. [T][X] Dinner w section
-5. [E][ ] Sectionals (from: 7pm to: 9pm)
+5. [E][ ] Sectionals (from: 20 Feb 2025, 8:30:00 am to: 20 Feb 2025, 10:30:00 am)
 ____________________________________________________________
 ____________________________________________________________
 Noted. I've removed this task:
- [E][ ] Sectionals (from: 7pm to: 9pm)
+ [E][ ] Sectionals (from: 20 Feb 2025, 8:30:00 am to: 20 Feb 2025, 10:30:00 am)
 Now you have 4 tasks in the list.
 ____________________________________________________________
 ____________________________________________________________
