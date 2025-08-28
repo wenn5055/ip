@@ -1,0 +1,4 @@
+T | 1 | wakeup
+D | 1 | eat lunch | noon
+E | 0 | career fair | 12pm | 5pm
+T | 1 | Dinner w section
