@@ -7,6 +7,11 @@ public class Dawae {
     public static ArrayList<Task> taskList = new ArrayList<>();
     private static final String line = "____________________________________________________________";
     
+    private Storage storage;
+    private TaskList tasks;
+    private Ui ui;
+    private Parser parser;
+    
     private static void retrieveData() throws IOException {
         File f = new File("DawaeTasks.txt"); // just a file obj
         if (f.exists()) {
@@ -47,13 +52,6 @@ public class Dawae {
         if (done) task.markDone();
         return task;
     }
-    
-    /*
-    T | 1 | read book
-    D | 0 | return book | June 6th
-    E | 0 | project meeting | 2pm | 4pm
-    T | 1 | join sports club
-     */
     
     private static void addData(Task task) {
         try (FileWriter writer = new FileWriter("DawaeTasks.txt", true)) {
