@@ -1,4 +1,4 @@
-public class DawaeMissingArgumentException extends DawaeExceptions {
+public class DawaeMissingArgumentException extends DawaeException {
     public DawaeMissingArgumentException(String msg) {
         super(msg);
     }

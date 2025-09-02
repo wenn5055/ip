@@ -21,16 +21,6 @@ public abstract class Task {
         return "OK, I've marked this task as not done yet:\n [ ] " + this.description;
     }
     
-    public String addTaskMsg() {
-        return "Got it. I've added this task:\n " + toString() + "\nNow you have "
-                + Dawae.taskList.size() + " tasks in the list.";
-    }
-    
-    public String deleteTaskMsg() {
-        return "Noted. I've removed this task:\n " + toString() + "\nNow you have "
-                + Dawae.taskList.size() + " tasks in the list.";
-    }
-    
     public abstract String toDataFile();
     
     @Override
