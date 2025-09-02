@@ -1,10 +1,10 @@
 Todo wakeup
-Deadline essay /by 2025-08-31T06:30:00
+Deadline v
 Event career fair /from 2025-08-20T06:30:00 /to 2025-08-20T08:30:00
 list
 Todo Dinner w section
 Event Sectionals /from 2025-02-20T08:30:00 /to 2025-02-20T10:30:00
-list
+      list
 mark 1
 mark 2
 mark 4

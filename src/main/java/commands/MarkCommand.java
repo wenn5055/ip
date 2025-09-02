@@ -1,13 +1,25 @@
-public class UnmarkCommand extends Command {
+package commands;
+
+import taskstuff.Task;
+import taskstuff.TaskList;
+import ui.Ui;
+import storage.Storage;
+
+import exceptions.DawaeException;
+
+public class MarkCommand extends Command {
     private final String args;
-    UnmarkCommand(String args) { this.args = args; }
+    
+    public MarkCommand(String args) {
+        this.args = args;
+    }
     
     @Override
-    void execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+    public void execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         try {
             int idx = Integer.parseInt(args.trim()) - 1;
             Task t = tasks.get(idx);
-            t.unmarkDone();
+            t.markDone();
             ui.showAdded(t, tasks.size()); // reuse message style; adjust if you have a dedicated done message
             storage.save(tasks);
         } catch (NumberFormatException | IndexOutOfBoundsException e) {

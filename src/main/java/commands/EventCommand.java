@@ -1,9 +1,20 @@
+package commands;
+
+import taskstuff.Event;
+import taskstuff.Task;
+import taskstuff.TaskList;
+import ui.Ui;
+import storage.Storage;
+
+import exceptions.DawaeException;
+import exceptions.DawaeMissingArgumentException;
+
 public class EventCommand extends Command {
     private final String args;
-    EventCommand(String args) { this.args = args; }
+    public EventCommand(String args) { this.args = args; }
     
     @Override
-    void execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+    public void execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         // expects: "desc /from 2025-08-20T06:30:00 /to 2025-08-20T08:30:00"
         String[] a = args.split("/from", 2);
         

@@ -1,3 +1,5 @@
+package taskstuff;
+
 import java.util.ArrayList;
 
 public class TaskList {
@@ -21,14 +23,6 @@ public class TaskList {
     
     public Task deleteTask(int i) {
         return taskList.remove(i);
-    }
-    
-    public void mark(int i) {
-    
-    }
-    
-    public void unmark(int i) {
-    
     }
     
     public Task get(int i) {
