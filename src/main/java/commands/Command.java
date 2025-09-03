@@ -6,6 +6,10 @@ import ui.Ui;
 import storage.Storage;
 
 public abstract class Command {
+    
     public abstract boolean execute(TaskList taskList, Ui ui, Storage storage) throws DawaeException;
-    public boolean isExit() {return false;}
+    
+    public boolean isExit() {
+        return false;
+    }
 }

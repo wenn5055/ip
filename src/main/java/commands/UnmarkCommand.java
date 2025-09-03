@@ -19,7 +19,7 @@ public class UnmarkCommand extends Command {
             int idx = Integer.parseInt(args.trim()) - 1;
             Task t = tasks.get(idx);
             t.unmarkDone();
-            ui.showAdded(t, tasks.size()); // reuse message style; adjust if you have a dedicated done message
+            ui.showAdded(t, tasks.size());
             storage.save(tasks);
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
             throw new DawaeException("Usage: done <taskNumber>");
