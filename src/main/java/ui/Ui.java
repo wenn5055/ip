@@ -2,6 +2,8 @@ package ui;
 import taskstuff.TaskList;
 import taskstuff.Task;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Ui {
@@ -61,5 +63,22 @@ public class Ui {
     
     public void showError(String message) {
         System.out.println("Error: " + message);
+    }
+    
+    /**
+     * Shows the tasks that match a search query in their original order.
+     * Displays an empty-state message if there are no matches.
+     *
+     * @param found the list of matching tasks.
+     */
+    public void showFound(ArrayList<Task> found) {
+        if (found == null || found.isEmpty()) {
+            System.out.println("UHm. No matching tasks found.");
+            return;
+        }
+        System.out.println("Yo. Here are the matching tasks in your list:");
+        for (int i = 0; i < found.size(); i++) {
+            System.out.println((i + 1) + ". " + found.get(i));
+        }
     }
 }

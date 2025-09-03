@@ -35,6 +35,7 @@ public class Parser {
         return switch (commandWord) {
             case "bye" -> new ExitCommand();
             case "list" -> new ListCommand();
+            case "find" -> new FindCommand(args);
             case "mark" -> new MarkCommand(args);
             case "unmark" -> new UnmarkCommand(args);
             case "delete" -> new DeleteCommand(args);
