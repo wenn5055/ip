@@ -14,7 +14,7 @@ public class EventCommand extends Command {
     public EventCommand(String args) { this.args = args; }
     
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+    public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         // expects: "desc /from 2025-08-20T06:30:00 /to 2025-08-20T08:30:00"
         String[] a = args.split("/from", 2);
         
@@ -28,5 +28,6 @@ public class EventCommand extends Command {
         tasks.addTask(t);
         ui.showAdded(t, tasks.size());
         storage.save(tasks);
+        return true;
     }
 }

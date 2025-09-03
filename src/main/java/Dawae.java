@@ -17,17 +17,17 @@ public class Dawae {
     public Dawae(String filePath) {
         this.ui = new Ui();
         this.storage = new Storage(filePath);
-        System.out.println("heyyy");
+        //System.out.println("heyyy");
         try {
             ArrayList<Task> storageArr= this.storage.load();
-            System.out.println("loll");
+            //System.out.println("loll");
             this.taskList = new TaskList(storageArr);
-            System.out.println("meow");
+            //System.out.println("meow");
         } catch (IOException e) {
-            System.out.println("yo");
+            //System.out.println("yo");
             this.ui.showLoadingError();
         } catch (DawaeException e) {
-            System.out.println("breah");
+            //System.out.println("breah");
             this.ui.showError(e.getMessage());
         }
     }

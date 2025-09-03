@@ -6,7 +6,8 @@ import storage.Storage;
 
 public class ListCommand extends Command {
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
+    public boolean execute(TaskList tasks, Ui ui, Storage storage) {
         ui.showList(tasks);
+        return true;
     }
 }

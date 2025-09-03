@@ -8,8 +8,9 @@ import exceptions.DawaeException;
 
 public class ExitCommand extends Command {
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+    public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         ui.showBye();
+        return true;
     }
     
     @Override

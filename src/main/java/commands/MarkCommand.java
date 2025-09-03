@@ -15,7 +15,7 @@ public class MarkCommand extends Command {
     }
     
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+    public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         try {
             int idx = Integer.parseInt(args.trim()) - 1;
             Task t = tasks.get(idx);
@@ -25,5 +25,6 @@ public class MarkCommand extends Command {
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
             throw new DawaeException("Usage: done <taskNumber>");
         }
+        return true;
     }
 }
