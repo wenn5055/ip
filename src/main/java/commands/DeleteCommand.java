@@ -1,11 +1,10 @@
 package commands;
 
+import exceptions.DawaeException;
+import storage.Storage;
 import taskstuff.Task;
 import taskstuff.TaskList;
 import ui.Ui;
-import storage.Storage;
-
-import exceptions.DawaeException;
 
 public class DeleteCommand extends Command {
     private final String args;

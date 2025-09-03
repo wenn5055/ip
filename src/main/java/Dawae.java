@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.util.ArrayList;
+
 import commands.Command;
 import exceptions.DawaeException;
 import parser.Parser;
@@ -5,9 +8,6 @@ import storage.Storage;
 import taskstuff.Task;
 import taskstuff.TaskList;
 import ui.Ui;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class Dawae {
     private final Storage storage;

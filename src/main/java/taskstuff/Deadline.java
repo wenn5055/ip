@@ -1,6 +1,6 @@
 package taskstuff;
 
-import java.time.LocalDateTime; // yyyy-mm-dd  ->  MMM dd yyyy
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 

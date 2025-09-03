@@ -1,8 +1,9 @@
 package ui;
-import taskstuff.TaskList;
-import taskstuff.Task;
 
 import java.util.Scanner;
+
+import taskstuff.Task;
+import taskstuff.TaskList;
 
 public class Ui {
     private static final String LINE = "____________________________________________________________";
