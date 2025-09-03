@@ -38,6 +38,14 @@ public class Ui {
         }
     }
     
+    public void showMarked(Task t, int count) {
+        System.out.println("Ogi. I've marked dis task:\n  " + t);
+    }
+    
+    public void showUnmarked(Task t, int count) {
+        System.out.println("Ogi. I've unmarked dis task:\n  " + t);
+    }
+    
     public void showBye() {
         System.out.println("Bye. \uD83D\uDC4B Hope to see you again soon! \uD83D\uDD25\n");
         sc.close();

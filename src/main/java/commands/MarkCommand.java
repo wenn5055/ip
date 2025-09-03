@@ -20,7 +20,7 @@ public class MarkCommand extends Command {
             int idx = Integer.parseInt(args.trim()) - 1;
             Task t = tasks.get(idx);
             t.markDone();
-            ui.showAdded(t, tasks.size()); // reuse message style; adjust if you have a dedicated done message
+            ui.showUnmarked(t, tasks.size()); // reuse message style; adjust if you have a dedicated done message
             storage.save(tasks);
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
             throw new DawaeException("Usage: done <taskNumber>");
