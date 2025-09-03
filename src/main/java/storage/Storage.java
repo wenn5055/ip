@@ -1,13 +1,16 @@
 package storage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import exceptions.DawaeException;
 import parser.Parser;
 import taskstuff.Task;
 import taskstuff.TaskList;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Storage {
     private final String filePath;

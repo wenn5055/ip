@@ -1,10 +1,9 @@
 package commands;
 
+import exceptions.DawaeException;
+import storage.Storage;
 import taskstuff.TaskList;
 import ui.Ui;
-import storage.Storage;
-
-import exceptions.DawaeException;
 
 public class ExitCommand extends Command {
     /** {@inheritDoc} */

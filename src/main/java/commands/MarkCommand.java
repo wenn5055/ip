@@ -1,11 +1,10 @@
 package commands;
 
+import exceptions.DawaeException;
+import storage.Storage;
 import taskstuff.Task;
 import taskstuff.TaskList;
 import ui.Ui;
-import storage.Storage;
-
-import exceptions.DawaeException;
 
 public class MarkCommand extends Command {
     private final String args;
