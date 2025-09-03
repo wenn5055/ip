@@ -11,8 +11,15 @@ import exceptions.DawaeMissingArgumentException;
 
 public class EventCommand extends Command {
     private final String args;
+    
+    /**
+     * Creates an event-adding command with description, {@code /from}, and {@code /to} timestamps.
+     *
+     * @param args the raw argument string containing description and time range.
+     */
     public EventCommand(String args) { this.args = args; }
     
+    /** {@inheritDoc} */
     @Override
     public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         // expects: "desc /from 2025-08-20T06:30:00 /to 2025-08-20T08:30:00"

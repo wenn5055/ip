@@ -19,8 +19,9 @@ public class Parser {
     /**
      * Parses user input into command for execution.
      *
-     * @param inputt full user input string
-     * @return the command based on the user input
+     * @param inputt full user input string.
+     * @return the command based on the user input.
+     * @throws DawaeException if the command word is unknown or malformed.
      */
     public static Command parse(String inputt) throws DawaeException {
         String[] splitted = inputt.trim().split(" ", 2); //splits into command word n args
@@ -44,8 +45,14 @@ public class Parser {
             default -> throw new DawaeException("I dont understand u. >:[");
         };
     }
-        
-    // Parses a single line from save file -> taskstuff.Task
+    
+    /**
+     * Parses a single save-file line into a Task instance.
+     * 
+     * @param line one line from the save file.
+     * @return the reconstructed task.
+     * @throws DawaeException if the line is corrupted or uses an unknown type.
+     */
     public static Task parseSaved(String line) throws DawaeException {
         // Expected example formats (adjust to match your existing taskstuff.Task#toSaveString):
         // T | 1 | read book

@@ -10,8 +10,15 @@ import exceptions.DawaeMissingArgumentException;
 
 public class DeadlineCommand extends Command {
     private final String args;
+    
+    /**
+     * Creates a deadline-adding command with description and {@code /by} timestamp.
+     *
+     * @param args the raw argument string containing description and time.
+     */
     public DeadlineCommand(String args) { this.args = args; }
     
+    /** {@inheritDoc} */
     @Override
     public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         // "desc /by 2025-08-31T06:30:00"

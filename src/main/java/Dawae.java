@@ -14,6 +14,12 @@ public class Dawae {
     private TaskList taskList;
     private final Ui ui;
     
+    /**
+     * Creates the application instance and initializes UI, storage, and task list.
+     * Loads tasks from the specified file if available; otherwise starts with an empty list.
+     *
+     * @param filePath path to the save file (e.g., {@code Dawaetasks.txt}).
+     */
     public Dawae(String filePath) {
         this.ui = new Ui();
         this.storage = new Storage(filePath);
@@ -27,6 +33,10 @@ public class Dawae {
         }
     }
     
+    /**
+     * Runs the main interaction loop of the application.
+     * Continuously reads commands, executes them, and prints responses until exit.
+     */
     public void run() {
         ui.showWelcome();
         boolean isExit = false;
@@ -45,6 +55,11 @@ public class Dawae {
         }
     }
     
+    /**
+     * Application entry point.
+     *
+     * @param args command-line arguments; unused.
+     */
     public static void main(String[] args) {
         new Dawae("Dawaetasks.txt").run();
     }

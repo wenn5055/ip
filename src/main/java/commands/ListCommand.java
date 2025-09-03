@@ -5,6 +5,7 @@ import ui.Ui;
 import storage.Storage;
 
 public class ListCommand extends Command {
+    /** {@inheritDoc} */
     @Override
     public boolean execute(TaskList tasks, Ui ui, Storage storage) {
         ui.showList(tasks);

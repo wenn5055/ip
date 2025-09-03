@@ -9,8 +9,15 @@ import exceptions.DawaeException;
 
 public class DeleteCommand extends Command {
     private final String args;
+    
+    /**
+     * Creates a delete command with raw arguments (usually the 1-based task index).
+     *
+     * @param args the raw argument string from the user input.
+     */
     public DeleteCommand(String args) { this.args = args; }
     
+    /** {@inheritDoc} */
     @Override
     public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         try {

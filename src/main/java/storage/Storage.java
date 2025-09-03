@@ -15,6 +15,14 @@ public class Storage {
     public Storage(String filePath) {
         this.filePath = filePath;
     }
+    
+    /**
+     * Loads tasks from the backing file if it exists.
+     * Creates the data directory if necessary.
+     *
+     * @return a list of tasks reconstructed from the save file; empty if file missing.
+     * @throws DawaeException if the file cannot be read or parsed.
+     */
     public ArrayList<Task> load() throws IOException, DawaeException {
         ArrayList<Task> taskList = new ArrayList<>();
         File f = new File(filePath); // just a file obj
@@ -35,6 +43,13 @@ public class Storage {
         return taskList;
     }
     
+    /**
+     * Saves the given task list to the backing file in a line-based format.
+     * Creates the data directory if necessary.
+     *
+     * @param tasks the tasks to persist.
+     * @throws DawaeException if writing to the file fails.
+     */
     public void save(TaskList tasks) throws DawaeException {
         try (FileWriter fw = new FileWriter(filePath.toString())) {
             for (int i = 0; i < tasks.size(); i++) {

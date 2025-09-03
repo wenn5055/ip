@@ -11,10 +11,17 @@ import exceptions.DawaeMissingArgumentException;
 
 public class TodoCommand extends Command {
     private final String args;
+    
+    /**
+     * Creates a todo-adding command with the provided description.
+     *
+     * @param args the todo description as entered by the user.
+     */
     public TodoCommand(String args) {
         this.args = args;
     }
     
+    /** {@inheritDoc} */
     @Override
     public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         if (args.isBlank()) throw new DawaeMissingArgumentException("Brah, give me ur task description...\uD83D\uDE44");
