@@ -7,8 +7,7 @@ import ui.Ui;
 public class ListCommand extends Command {
     /** {@inheritDoc} */
     @Override
-    public boolean execute(TaskList tasks, Ui ui, Storage storage) {
-        ui.showList(tasks);
-        return true;
+    public String execute(TaskList tasks, Ui ui, Storage storage) {
+        return ui.showList(tasks);
     }
 }

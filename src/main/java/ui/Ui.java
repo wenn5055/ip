@@ -129,14 +129,17 @@ public class Ui {
      *
      * @param found the list of matching tasks.
      */
-    public void showFound(ArrayList<Task> found) {
+    public String showFound(ArrayList<Task> found) {
         if (found == null || found.isEmpty()) {
             System.out.println("UHm. No matching tasks found.");
-            return;
+            return "UHm. No matching tasks found.";
         }
+        String ret = "Yo. Here are the matching tasks in your list:\n";
         System.out.println("Yo. Here are the matching tasks in your list:");
         for (int i = 0; i < found.size(); i++) {
             System.out.println((i + 1) + ". " + found.get(i));
+            ret += (i + 1) + ". " + found.get(i) + "\n";
         }
+        return ret;
     }
 }

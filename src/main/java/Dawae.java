@@ -54,12 +54,36 @@ public class Dawae {
 //            }
 //        }
 //    }
-    
+    public void run() {
+        boolean isExit = false;
+        while (!isExit) {
+            try {
+                String fullCommand = this.ui.readCommand();
+                this.ui.showLine();
+                Command c = Parser.parse(fullCommand);
+                c.execute(this.taskList, this.ui, this.storage);
+                isExit = c.isExit();
+            } catch (DawaeException e) {
+                this.ui.showError(e.getMessage());
+            } finally {
+                this.ui.showLine();
+            }
+        }
+    }
     /**
      * Generates a response for the user's chat message.
      */
     public String getResponse(String input) {
-        return "Dawae heard: " + input;
+        try {
+            this.ui.showLine();
+            Command c = Parser.parse(input);
+            return c.execute(this.taskList, this.ui, this.storage);
+        } catch (DawaeException e) {
+            this.ui.showError(e.getMessage());
+            return e.getMessage();
+        } finally {
+            this.ui.showLine();
+        }
     }
     
 //    /**

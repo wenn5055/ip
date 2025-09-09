@@ -8,9 +8,8 @@ import ui.Ui;
 public class ExitCommand extends Command {
     /** {@inheritDoc} */
     @Override
-    public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
-        ui.showBye();
-        return true;
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+        return ui.showBye();
     }
     
     /** {@inheritDoc} */
