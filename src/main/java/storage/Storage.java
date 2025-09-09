@@ -13,10 +13,10 @@ import taskstuff.Task;
 import taskstuff.TaskList;
 
 public class Storage {
-    private final String filePath;
+    public final String FILEPATH;
     
-    public Storage(String filePath) {
-        this.filePath = filePath;
+    public Storage(String filepath) {
+        this.FILEPATH = filepath;
     }
     
     /**
@@ -28,7 +28,7 @@ public class Storage {
      */
     public ArrayList<Task> load() throws IOException, DawaeException {
         ArrayList<Task> taskList = new ArrayList<>();
-        File f = new File(filePath); // just a file obj
+        File f = new File(FILEPATH); // just a file obj
         try {
             Scanner s = new Scanner(f);
             while (s.hasNextLine()) {
@@ -54,7 +54,7 @@ public class Storage {
      * @throws DawaeException if writing to the file fails.
      */
     public void save(TaskList tasks) throws DawaeException {
-        try (FileWriter fw = new FileWriter(filePath.toString())) {
+        try (FileWriter fw = new FileWriter(FILEPATH.toString())) {
             for (int i = 0; i < tasks.size(); i++) {
                 fw.write(tasks.get(i).toDataFile() + "\n");
             }

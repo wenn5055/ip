@@ -7,6 +7,7 @@ import commands.DeadlineCommand;
 import commands.DeleteCommand;
 import commands.EventCommand;
 import commands.ExitCommand;
+import commands.FindCommand;
 import commands.ListCommand;
 import commands.MarkCommand;
 import commands.TodoCommand;

@@ -14,10 +14,11 @@ public class Ui {
     /**
      * Shows the welcome banner and greeting message to the user.
      */
-    public void showWelcome() {
+    public String showWelcome() {
         System.out.println(LINE);
         System.out.println("Hello! I'm DAWAE \uD83D\uDE06\nWhat can I do for you?");
         System.out.println(LINE);
+        return "Hello! I'm DAWAE \uD83D\uDE06\nWhat can I do for you?";
     }
     
     /**
@@ -35,9 +36,10 @@ public class Ui {
      * @param t the task that was added.
      * @param count the total number of tasks after the addition.
      */
-    public void showAdded(Task t, int count) {
+    public String showAdded(Task t, int count) {
         System.out.println("Ogi. I've added dis task:\n  " + t);
         System.out.println("Now you have " + count + " tasks in the list.");
+        return "Ogi. I've added dis task:\n  " + t + "\nNow you have " + count + " tasks in the list.";
     }
     
     /**
@@ -46,9 +48,10 @@ public class Ui {
      * @param t the task that was deleted.
      * @param count the total number of tasks after the deletion.
      */
-    public void showDeleted(Task t, int count) {
+    public String showDeleted(Task t, int count) {
         System.out.println("Ogi. I've removed dis task:\n  " + t);
         System.out.println("Now u have " + count + " tasks in dis list.");
+        return "Ogi. I've removed dis task:\n  " + t + "\nNow u have " + count + " tasks in dis list.";
     }
     
     /**
@@ -56,14 +59,17 @@ public class Ui {
      *
      * @param tasks the task list to display.
      */
-    public void showList(TaskList tasks) {
+    public String showList(TaskList tasks) {
         if (tasks.size() == 0) {
             System.out.println("Your task list is empty.");
-            return;
+            return "Your task list is empty.";
         }
+        String ret = "";
         for (int i = 0; i < tasks.size(); i++) {
             System.out.println((i + 1) + ". " + tasks.get(i));
+            ret += (i + 1) + ". " + tasks.get(i) + "\n";
         }
+        return ret;
     }
     
     /**
@@ -71,8 +77,9 @@ public class Ui {
      *
      * @param t the task list to display.
      */
-    public void showMarked(Task t, int count) {
+    public String showMarked(Task t, int count) {
         System.out.println("Ogi. I've marked dis task:\n  " + t);
+        return "Ogi. I've marked dis task:\n  " + t;
     }
     
     /**
@@ -80,15 +87,18 @@ public class Ui {
      *
      * @param t the task list to display.
      */
-    public void showUnmarked(Task t, int count) {
+    public String showUnmarked(Task t, int count) {
         System.out.println("Ogi. I've unmarked dis task:\n  " + t);
+        return "Ogi. I've unmarked dis task:\n  " + t;
     }
     /**
      * Shows goodbye message
      */
-    public void showBye() {
-        System.out.println("Bye. \uD83D\uDC4B Hope to see you again soon! \uD83D\uDD25\n");
+    public String showBye() {
         sc.close();
+        System.out.println("Bye. \uD83D\uDC4B Hope to see you again soon! \uD83D\uDD25\n");
+        return "Bye. \uD83D\uDC4B Hope to see you again soon! \uD83D\uDD25\n";
+        
     }
     
     /**
@@ -97,9 +107,11 @@ public class Ui {
     public void showLine() {
         System.out.println(LINE);
     }
-    public void showLoadingError() {
+    public String showLoadingError() {
         System.out.println("Loading Error! Having sum issues internally, sad. Restart maybe? " +
                 "\uD83D\uDE36\u200D\uD83C\uDF2B\uFE0F");
+        return "Loading Error! Having sum issues internally, sad. Restart maybe? " +
+                "\uD83D\uDE36\u200D\uD83C\uDF2B\uFE0F";
     }
     
     /**
