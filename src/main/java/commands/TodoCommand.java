@@ -22,12 +22,11 @@ public class TodoCommand extends Command {
     
     /** {@inheritDoc} */
     @Override
-    public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         if (args.isBlank()) throw new DawaeMissingArgumentException("Brah, give me ur task description...\uD83D\uDE44");
         Task t = new Todo(args.trim());
         tasks.addTask(t);
-        ui.showAdded(t, tasks.size());
         storage.save(tasks);
-        return true;
+        return ui.showAdded(t, tasks.size());
     }
 }

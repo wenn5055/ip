@@ -22,13 +22,12 @@ public class FindCommand extends Command {
     
     /** {@inheritDoc} */
     @Override
-    public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         String keyword = (args == null) ? "" : args.trim().toLowerCase();
         if (keyword.isEmpty()) {
             throw new DawaeException("Brah pls give a KEYWORD");
         }
         ArrayList<Task> results = tasks.findContaining(keyword);
-        ui.showFound(results);
-        return true;
+        return ui.showFound(results);
     }
 }

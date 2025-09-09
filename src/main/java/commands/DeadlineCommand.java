@@ -20,7 +20,7 @@ public class DeadlineCommand extends Command {
     
     /** {@inheritDoc} */
     @Override
-    public boolean execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {
         // "desc /by 2025-08-31T06:30:00"
         if (args.isEmpty()) throw new DawaeMissingArgumentException("Brah, give me ur task description...\uD83D\uDE44");
         String[] parts = args.split("/by", 2);
@@ -29,8 +29,7 @@ public class DeadlineCommand extends Command {
         String by = parts[1].trim();
         Task t = new Deadline(desc, by);
         tasks.addTask(t);
-        ui.showAdded(t, tasks.size());
         storage.save(tasks);
-        return true;
+        return ui.showAdded(t, tasks.size());
     }
 }

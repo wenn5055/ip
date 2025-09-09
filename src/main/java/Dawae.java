@@ -33,12 +33,28 @@ public class Dawae {
         }
     }
     
-    /**
-     * Runs the main interaction loop of the application.
-     * Continuously reads commands, executes them, and prints responses until exit.
-     */
+//    /**
+//     * Runs the main interaction loop of the application.
+//     * Continuously reads commands, executes them, and prints responses until exit.
+//     */
+//    public void run() {
+//        ui.showWelcome();
+//        boolean isExit = false;
+//        while (!isExit) {
+//            try {
+//                String fullCommand = this.ui.readCommand();
+//                this.ui.showLine();
+//                Command c = Parser.parse(fullCommand);
+//                c.execute(this.taskList, this.ui, this.storage);
+//                isExit = c.isExit();
+//            } catch (DawaeException e) {
+//                this.ui.showError(e.getMessage());
+//            } finally {
+//                this.ui.showLine();
+//            }
+//        }
+//    }
     public void run() {
-        ui.showWelcome();
         boolean isExit = false;
         while (!isExit) {
             try {
@@ -54,13 +70,28 @@ public class Dawae {
             }
         }
     }
-    
     /**
-     * Application entry point.
-     *
-     * @param args command-line arguments; unused.
+     * Generates a response for the user's chat message.
      */
-    public static void main(String[] args) {
-        new Dawae("Dawaetasks.txt").run();
+    public String getResponse(String input) {
+        try {
+            this.ui.showLine();
+            Command c = Parser.parse(input);
+            return c.execute(this.taskList, this.ui, this.storage);
+        } catch (DawaeException e) {
+            this.ui.showError(e.getMessage());
+            return e.getMessage();
+        } finally {
+            this.ui.showLine();
+        }
     }
+    
+//    /**
+//     * Application entry point.
+//     *
+//     * @param args command-line arguments; unused.
+//     */
+//    public static void main(String[] args) {
+//        new Dawae("Dawaetasks.txt").run();
+//    }
 }
