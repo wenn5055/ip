@@ -33,6 +33,7 @@ public class Parser {
      * @throws DawaeException if the command word is unknown or malformed.
      */
     public static Command parse(String inputt) throws DawaeException {
+        assert inputt != null : "Input to parse should not be null";
         String[] splitted = inputt.trim().split(" ", 2); //splits into command word n args
         if (inputt.trim().isEmpty()) throw new DawaeException("Brah. Why never say anything.\uD83D\uDE10");
         String commandWord = splitted[0].toLowerCase();
@@ -42,6 +43,7 @@ public class Parser {
         } else {
             args = splitted[1];
         }
+        assert commandWord != null;
         return switch (commandWord) {
             case "bye" -> new ExitCommand();
             case "list" -> new ListCommand();
@@ -70,9 +72,12 @@ public class Parser {
         // E | 1 | project meeting | 2019-10-15T18:00 to 2019-10-15T20:00
         String[] parts = line.split(" \\| ");
         if (parts.length < 3) throw new DawaeException("Corrupted save line: " + line);
+        assert parts.length >= 3 : "parts should have at least 3 elements";
         String type = parts[0];
         boolean isDone = parts[1].trim().equals("1");
         String desc = parts[2];
+        assert type != null && !type.isEmpty() : "Task type should not be null or empty";
+        assert desc != null && !desc.isEmpty() : "Task description should not be null or empty";
         switch (type) {
         case "T":
             Todo t = new Todo(desc);

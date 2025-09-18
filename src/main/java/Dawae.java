@@ -25,7 +25,9 @@ public class Dawae {
         this.storage = new Storage(filePath);
         try {
             ArrayList<Task> storageArr= this.storage.load();
+            assert storageArr != null : "Loaded tasks from storage should not be null";
             this.taskList = new TaskList(storageArr);
+            assert this.taskList != null : "TaskList should be initialized";
         } catch (IOException e) {
             this.ui.showLoadingError();
         } catch (DawaeException e) {
@@ -59,8 +61,10 @@ public class Dawae {
         while (!isExit) {
             try {
                 String fullCommand = this.ui.readCommand();
+                assert fullCommand != null : "Input command should not be null";
                 this.ui.showLine();
                 Command c = Parser.parse(fullCommand);
+                assert c != null : "Parsed command should not be null";
                 c.execute(this.taskList, this.ui, this.storage);
                 isExit = c.isExit();
             } catch (DawaeException e) {
@@ -75,8 +79,10 @@ public class Dawae {
      */
     public String getResponse(String input) {
         try {
+            assert input != null;
             this.ui.showLine();
             Command c = Parser.parse(input);
+            assert c != null : "Parsed command should not be null";
             return c.execute(this.taskList, this.ui, this.storage);
         } catch (DawaeException e) {
             this.ui.showError(e.getMessage());
