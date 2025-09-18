@@ -9,6 +9,10 @@ public class TaskList {
         this.taskList = a;
     }
     
+    public void clear() {
+        this.taskList.clear();
+    }
+    
     /**
      * Adds a task to the end of the list.
      *

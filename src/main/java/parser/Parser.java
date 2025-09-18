@@ -2,6 +2,7 @@ package parser;
 
 import java.util.regex.Pattern;
 
+import commands.ArchiveCommand;
 import commands.Command;
 import commands.DeadlineCommand;
 import commands.DeleteCommand;
@@ -54,6 +55,7 @@ public class Parser {
             case "todo" -> new TodoCommand(args);
             case "deadline" -> new DeadlineCommand(args);
             case "event" -> new EventCommand(args);
+            case "archive" -> new ArchiveCommand();
             default -> throw new DawaeException("I dont understand u. >:[");
         };
     }

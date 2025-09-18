@@ -1,7 +1,6 @@
 package ui;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import taskstuff.Task;
@@ -118,9 +117,11 @@ public class Ui {
      * Shows a formatted error message to the user.
      *
      * @param message the error message to display.
+     * @return
      */
-    public void showError(String message) {
+    public String showError(String message) {
         System.out.println("Error: " + message);
+        return "Error: " + message;
     }
     
     /**
@@ -141,5 +142,10 @@ public class Ui {
             ret += (i + 1) + ". " + found.get(i) + "\n";
         }
         return ret;
+    }
+    
+    public String showArchive(String archiveFile) {
+        System.out.println("All tasks archived to " + archiveFile + ". Task list is now empty.");
+        return "All tasks archived to " + archiveFile + ". Task list is now empty.";
     }
 }
