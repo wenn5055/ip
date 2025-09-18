@@ -43,13 +43,13 @@ test {
 }
 
 application {
-    mainClass.set("Dawae")
+    mainClass.set("Main")
 }
 
 shadowJar {
     archiveBaseName = "dawae"
     archiveClassifier = null
-    archiveFileName = 'dawae.jar'
+    archiveFileName = 'dawaeGUI.jar'
 }
 
 run{
