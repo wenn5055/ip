@@ -69,7 +69,7 @@ public class Parser {
         // Expected example formats (adjust to match your existing taskstuff.Task#toSaveString):
         // T | 1 | read book
         // D | 0 | return book | 2019-10-15T18:00
-        // E | 1 | project meeting | 2019-10-15T18:00 to 2019-10-15T20:00
+        // E | 1 | project meeting | 2019-10-15T18:00 to 2019-10-15T20:00P
         String[] parts = line.split(" \\| ");
         if (parts.length < 3) throw new DawaeException("Corrupted save line: " + line);
         assert parts.length >= 3 : "parts should have at least 3 elements";

@@ -28,11 +28,13 @@ public class Storage {
      */
     public ArrayList<Task> load() throws IOException, DawaeException {
         ArrayList<Task> taskList = new ArrayList<>();
+        assert FILEPATH != null && !FILEPATH.isEmpty() : "FILEPATH should not be null or empty";
         File f = new File(FILEPATH); // just a file obj
         try {
             Scanner s = new Scanner(f);
             while (s.hasNextLine()) {
                 String line = s.nextLine().trim();
+                assert line != null : "Line read from file should not be null";
                 Task task = Parser.parseSaved(line);
                 if (task != null) {
                     taskList.add(task);
@@ -43,6 +45,7 @@ public class Storage {
             f.createNewFile();
             return taskList;
         }
+        assert taskList != null : "Returned taskList should not be null";
         return taskList;
     }
     
@@ -54,8 +57,10 @@ public class Storage {
      * @throws DawaeException if writing to the file fails.
      */
     public void save(TaskList tasks) throws DawaeException {
+        assert tasks != null : "TaskList to save should not be null";
         try (FileWriter fw = new FileWriter(FILEPATH.toString())) {
             for (int i = 0; i < tasks.size(); i++) {
+                assert tasks.get(i) != null : "Task to save should not be null";
                 fw.write(tasks.get(i).toDataFile() + "\n");
             }
         } catch (IOException e) {
