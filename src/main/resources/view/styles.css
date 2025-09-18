@@ -42,5 +42,5 @@
 }
 .send-button:hover {
     -fx-background-color: #9c62e3;
-    -fx-text-fill: ;
+    -fx-text-fill: #b3deff;
 }
