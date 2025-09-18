@@ -120,8 +120,8 @@ public class Ui {
      * @return
      */
     public String showError(String message) {
-        System.out.println("Error: " + message);
-        return "Error: " + message;
+        System.out.println("bruh Error: " + message);
+        return "bruh Error: " + message;
     }
     
     /**
@@ -132,11 +132,11 @@ public class Ui {
      */
     public String showFound(ArrayList<Task> found) {
         if (found == null || found.isEmpty()) {
-            System.out.println("UHm. No matching tasks found.");
-            return "UHm. No matching tasks found.";
+            System.out.println("UHm. No matching tasks found. \uD83D\uDC40");
+            return "UHm. No matching tasks found. \uD83D\uDC40";
         }
-        String ret = "Yo. Here are the matching tasks in your list:\n";
-        System.out.println("Yo. Here are the matching tasks in your list:");
+        String ret = "Yo. Here are da matching tasks in your list:\n";
+        System.out.println("Yo. Here are da matching tasks in your list:");
         for (int i = 0; i < found.size(); i++) {
             System.out.println((i + 1) + ". " + found.get(i));
             ret += (i + 1) + ". " + found.get(i) + "\n";
@@ -145,7 +145,7 @@ public class Ui {
     }
     
     public String showArchive(String archiveFile) {
-        System.out.println("All tasks archived to " + archiveFile + ". Task list is now empty.");
-        return "All tasks archived to " + archiveFile + ". Task list is now empty.";
+        System.out.println("All tasks archived to " + archiveFile + ". Task list now empty. hehe");
+        return "All tasks archived to " + archiveFile + ". Task list now empty. hehe";
     }
 }
