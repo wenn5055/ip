@@ -10,7 +10,7 @@ import storage.Storage;
 
 public class FindCommand extends Command {
     private final String args;
-    
+
     /**
      * Creates a find command using the raw argument string.
      *
@@ -19,7 +19,7 @@ public class FindCommand extends Command {
     public FindCommand(String args) {
         this.args = args;
     }
-    
+
     /** {@inheritDoc} */
     @Override
     public String execute(TaskList tasks, Ui ui, Storage storage) throws DawaeException {

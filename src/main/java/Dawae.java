@@ -34,46 +34,7 @@ public class Dawae {
             this.ui.showError(e.getMessage());
         }
     }
-    
-//    /**
-//     * Runs the main interaction loop of the application.
-//     * Continuously reads commands, executes them, and prints responses until exit.
-//     */
-//    public void run() {
-//        ui.showWelcome();
-//        boolean isExit = false;
-//        while (!isExit) {
-//            try {
-//                String fullCommand = this.ui.readCommand();
-//                this.ui.showLine();
-//                Command c = Parser.parse(fullCommand);
-//                c.execute(this.taskList, this.ui, this.storage);
-//                isExit = c.isExit();
-//            } catch (DawaeException e) {
-//                this.ui.showError(e.getMessage());
-//            } finally {
-//                this.ui.showLine();
-//            }
-//        }
-//    }
-    public void run() {
-        boolean isExit = false;
-        while (!isExit) {
-            try {
-                String fullCommand = this.ui.readCommand();
-                assert fullCommand != null : "Input command should not be null";
-                this.ui.showLine();
-                Command c = Parser.parse(fullCommand);
-                assert c != null : "Parsed command should not be null";
-                c.execute(this.taskList, this.ui, this.storage);
-                isExit = c.isExit();
-            } catch (DawaeException e) {
-                this.ui.showError(e.getMessage());
-            } finally {
-                this.ui.showLine();
-            }
-        }
-    }
+ 
     /**
      * Generates a response for the user's chat message.
      */
@@ -91,13 +52,4 @@ public class Dawae {
             this.ui.showLine();
         }
     }
-    
-//    /**
-//     * Application entry point.
-//     *
-//     * @param args command-line arguments; unused.
-//     */
-//    public static void main(String[] args) {
-//        new Dawae("Dawaetasks.txt").run();
-//    }
 }
