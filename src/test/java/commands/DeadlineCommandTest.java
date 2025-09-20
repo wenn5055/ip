@@ -38,8 +38,8 @@ public class DeadlineCommandTest {
     
     @Test
     public void testExecuteSuccess() throws DawaeException {
-//        assertTrue(new DeadlineCommand("Deadline essay /by 2025-08-31T06:30:00").execute(
-//                new TaskList(new ArrayList<>()), new Ui(), new Storage("Dawaetasks.txt")));
+        assertTrue(new DeadlineCommand("Deadline essay /by 2025-08-31T06:30:00").execute(
+                new TaskList(new ArrayList<>()), new Ui(), new Storage("Dawaetasks.txt")));
     }
     
 }

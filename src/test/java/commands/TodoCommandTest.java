@@ -24,9 +24,9 @@ public class TodoCommandTest {
         }
     }
     
-//    @Test
-//    public void testExecuteSuccess() throws DawaeException {
-//        assertTrue(new TodoCommand("Todo Eat").execute(
-//                new TaskList(new ArrayList<>()), new Ui(), new Storage("Dawaetasks.txt")));
-//    }
+    @Test
+    public void testExecuteSuccess() throws DawaeException {
+        assertTrue(new TodoCommand("Todo Eat").execute(
+                new TaskList(new ArrayList<>()), new Ui(), new Storage("Dawaetasks.txt")));
+    }
 }
