@@ -25,7 +25,7 @@ public class DeleteCommand extends Command {
             storage.save(tasks);
             return ui.showDeleted(removed, tasks.size());
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
-            throw new DawaeException("Usage: delete <taskNumber>");
+            throw new DawaeException("brAhHHH invalid task number provided");
         }
     }
 }

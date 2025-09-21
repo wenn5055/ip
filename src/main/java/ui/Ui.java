@@ -21,15 +21,6 @@ public class Ui {
     }
     
     /**
-     * Reads the next line of user input from the console.
-     *
-     * @return the raw command line entered by the user.
-     */
-    public String readCommand() {
-        return sc.nextLine();
-    }
-    
-    /**
      * Shows a confirmation that a task has been added.
      *
      * @param t the task that was added.

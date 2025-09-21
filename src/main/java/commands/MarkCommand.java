@@ -28,7 +28,7 @@ public class MarkCommand extends Command {
             storage.save(tasks);
             return ui.showMarked(t, tasks.size());
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
-            throw new DawaeException("Usage: done <taskNumber>");
+            throw new DawaeException("brAhHHH invalid task number provided");
         }
     }
 }

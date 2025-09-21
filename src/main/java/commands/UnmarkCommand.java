@@ -24,7 +24,7 @@ public class UnmarkCommand extends Command {
             storage.save(tasks);
             return ui.showUnmarked(t, tasks.size());
         } catch (NumberFormatException | IndexOutOfBoundsException e) {
-            throw new DawaeException("Usage: done <taskNumber>");
+            throw new DawaeException("brAhHHH invalid task number provided");
         }
     }
 }
