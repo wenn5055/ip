@@ -1,6 +1,6 @@
 # Dawae User Guide 🤡🤡🤡
 
-![Dawae GUI](Ui.png)
+![Dawae GUI](/docs/Ui.png)
 
 ## dyu kno da wae ? :]
 Dawae is a task management application that helps you organize and keep track of your tasks efficiently.
